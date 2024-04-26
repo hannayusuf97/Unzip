@@ -6,6 +6,5 @@ if (#files >  0) then
         local fpath = string.lower(meta_data(file).local_path)
         local noext = fpath:gsub("%.zip$", "")
         shell_command("unzip " .. fpath .." -d " .. noext)
-        shell_command("chmod a+rx " .. fpath)
     end
 end
