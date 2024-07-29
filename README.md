@@ -42,5 +42,5 @@ The script has only been tested on Nextcloud docker image
 *This Branch is specifically for the new feature which uses unrar to extract rar files and it seems more consistent also includes the option to choose whether to extract in the same directory or in a directory under the same name.*
 
 
-Done, Enjoy!
+Enjoy!
 
