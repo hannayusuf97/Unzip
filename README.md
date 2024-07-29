@@ -19,3 +19,5 @@ Installing the script:
 Go to Administration and navigate to File Actions, Add New Actions and Paste the script Enable and show in context menu
 
 Done, Enjoy!
+
+*Find an update version on the unzip-1.1 branch*
