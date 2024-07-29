@@ -3,7 +3,7 @@
     A small script for file actions in Nextcloud, this script as
     mentioned in the name unzips selected files into the current 
     directory under file name without the extension, on this branch
-    an update has been made to be able to unzip in the current directory
+    an update has been made to be able to unzip in the current directory.
 
 # Features 
 - Extract all supported compressed extensions.
