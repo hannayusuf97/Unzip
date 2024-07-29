@@ -6,12 +6,9 @@ local is_dirpath = get_input("is_dirpath")
 local supportedExtensions = {".zip", ".7z", ".rar", ".tar", ".gz", ".bz2", ".xz"}
 
 -- Function to get the directory path
-local function getDirectoryPath(rootpath)
-    add_message("rootpath " .. rootpath)
-    
+local function getDirectoryPath(rootpath)    
     -- Execute the shell command to get the directory path
     local result = shell_command("dirname \"" .. rootpath .. "\"")
-    add_message("result " .. result.output)
     
     -- Trim any trailing whitespace from the output
     local dirPath = result.output:gsub("%s+$", "")
@@ -37,7 +34,6 @@ local function extractFile(fpath, noext, outputdir)
     local command = ""
     if fpath:match("%.rar$") then
         if is_dirpath then
-            add_message("is dirpath")
             createDirectory(noext)
             command = "unrar x \"" .. fpath .. "\" \"" .. noext .. "\""
         else
@@ -58,9 +54,7 @@ end
 if (#files > 0) then
     for i, file in ipairs(files) do
         local fpath = meta_data(file).local_path
-        add_message("filepath " .. fpath)
         local noext = removeSupportedExtensions(fpath)
-        add_message("no ext " .. noext)
         local outputdir = getDirectoryPath(fpath)
         local command = extractFile(fpath, noext, outputdir)
         add_message("Command to execute: " .. command)
